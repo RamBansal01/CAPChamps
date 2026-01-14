@@ -1,4 +1,4 @@
-@baseurl = http://localhost:35405/odata/v4/product
+@baseurl = http://localhost:4004/odata/v4/product
 
 #GET {{baseurl}}/addition(num1=5,num2=10)
 
