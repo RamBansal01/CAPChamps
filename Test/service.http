@@ -1,6 +1,8 @@
-@baseurl = http://localhost:4004/odata/v4/product
+@baseurl = http://localhost:4004/odata/v4/productshop
 
 #GET {{baseurl}}/addition(num1=5,num2=10)
 
 #GET {{baseurl}}/printhelloworld(name= "Hello")
-GET {{baseurl}}/Myfunction(category =2)
+#GET {{baseurl}}/Myfunction(category =2)
+#GET {{baseurl}}/Supplier
+GET {{baseurl}}/Product
