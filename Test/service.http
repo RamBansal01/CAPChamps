@@ -1,4 +1,4 @@
-@baseurl = http://localhost:45143/odata/v4/productshop
+@baseurl = http://localhost:4004/odata/v4/productshop
 
 
 
@@ -16,11 +16,10 @@ Headers:
   Content-Type: application/json
 
 {
-  "ID": 7,
-  "name": "Whiskey",
-  "Carrier": "Ground",
+  "name": "Rum",
+  "Carrier": "AIR1",
   "Labelflag": "ZZ",
-  "Category": 6,
-  "Newfield_price": 700,
-  "Newfield_stock": 60
+  "Category": 10,
+  "Newfield_price": 900,
+  "Newfield_stock": 90
 }

@@ -1,5 +1,5 @@
 ID,name,Category,Newfield_price,Newfield_stock,Carrier,Labelflag
-1,Book,1,100,10,UPS,H
-2,Bat,2,200,20,Fedex,HQ
-3,Ball,3,300,30,K&N,LQ
-4,Wicket,4,400,40,PURQ,EQ
+1ae43c71-5356-4d08-ad32-9e4400de99b8,Book,1,100,10,UPS,H
+9a89f63b-a048-49dc-85f9-648af1825041,Bat,2,200,20,Fedex,HQ
+c4918368-7048-4195-bdfb-58767fc919b8,Ball,3,300,30,K&N,LQ
+3b4125b6-2ad4-4009-a2f3-00bc539c5922,Wicket,4,400,40,PURQ,EQ
