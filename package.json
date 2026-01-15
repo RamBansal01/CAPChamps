@@ -7,10 +7,24 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2.1.2"
+    "@cap-js/sqlite": "^2.1.2",
+    "cds-plugin-ui5": "^0.13.0"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-productshop": "cds watch --open productshop/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-supplier": "cds watch --open supplier/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-productlist": "cds watch --open productlist/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-supplierlist": "cds watch --open supplierlist/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
-  "private": true
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/productshop",
+    "app/supplier",
+    "app/productlist",
+    "app/supplierlist"
+  ]
 }

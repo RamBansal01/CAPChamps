@@ -1,11 +1,23 @@
-namespace sap.cap.namespace1;//done to diffenciate to application with same entities eg Product and Supplier
+namespace sap.cap.namespace1; //done to diffenciate to application with same entities eg Product and Supplier
 
-entity Product {
+aspect routeinfo { //addition of extra values without defining in entity everytime
+
+    Carrier   : String;
+    Labelflag : String;
+
+}
+
+type pricestock { // done when we have price and stock same in multiple enteties : field = new field added
+    price : Integer;
+    stock : Integer;
+}
+
+entity Product : routeinfo {
     key ID       : Integer;
         name     : String;
-        price    : Integer;
-        stock    : Integer;
         Category : Integer;
+        Newfield : pricestock;
+
 }
 
 entity Supplier {
