@@ -1,8 +1,26 @@
-@baseurl = http://localhost:4004/odata/v4/productshop
+@baseurl = http://localhost:45143/odata/v4/productshop
+
+
 
 #GET {{baseurl}}/addition(num1=5,num2=10)
 
 #GET {{baseurl}}/printhelloworld(name= "Hello")
 #GET {{baseurl}}/Myfunction(category =2)
 #GET {{baseurl}}/Supplier
-GET {{baseurl}}/Product
+#GET {{baseurl}}/Product
+# POST to add 1 more set in the existing record eg product
+
+
+POST {{baseurl}}/Product
+Headers:
+  Content-Type: application/json
+
+{
+  "ID": 7,
+  "name": "Whiskey",
+  "Carrier": "Ground",
+  "Labelflag": "ZZ",
+  "Category": 6,
+  "Newfield_price": 700,
+  "Newfield_stock": 60
+}
