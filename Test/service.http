@@ -11,15 +11,25 @@
 # POST to add 1 more set in the existing record eg product
 
 
-POST {{baseurl}}/Product
-Headers:
-  Content-Type: application/json
+#POST {{baseurl}}/Product
+#Headers:
+ # Content-Type: application/json
 
-{
-  "name": "Rum",
-  "Carrier": "AIR1",
-  "Labelflag": "ZZ",
-  "Category": 10,
-  "Newfield_price": 900,
-  "Newfield_stock": 90
-}
+#{
+  #"name": "Philips",
+  #"Carrier": "AIR2",
+  #"Labelflag": "RB",
+  #"Category": 12,
+  #"Newfield_price": 1900,
+  #"Newfield_stock": 100
+#}
+
+#GET {{baseurl}}/Product?$expand=Supplier #expand command is to open the linkage between entities
+
+
+#GET {{baseurl}}/Product?$expand=Category,Supplier
+#GET  {{baseurl}}/Product?$expand=supplier&$select=name,Category
+
+#GET  {{baseurl}}/Supplier?$expand=products
+
+GET {{baseurl}}/Product?$expand=conversation

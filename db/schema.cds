@@ -1,34 +1,38 @@
-namespace sap.cap.namespace1; //done to diffenciate to application with same entities eg Product and Supplier
+namespace sap.cap.namespace1;
 
-using { cuid,managed } from '@sap/cds/common';
+using
+{
+    cuid,
+    managed
+}
+from '@sap/cds/common';
 
-aspect routeinfo { //addition of extra values without defining in entity everytime
-
-    Carrier   : String;
+aspect routeinfo
+{
+    Carrier : String;
     Labelflag : String;
-
 }
 
-//aspect id {
-// key ID : UUID; //> automatically filled in
-//}
-
-type pricestock { // done when we have price and stock same in multiple enteties : field = new field added
+entity Product : cuid, managed, routeinfo
+{
+    name : String;
+    Category : Integer;
     price : Integer;
     stock : Integer;
+    supplier : Association to one Supplier;
+    conversation: Composition of many{
+        key ID: UUID;
+        timestamp: String;
+        processor: String;
+        message: String;
+    }
 }
 
-entity Product : cuid, routeinfo,managed {
-    //key ID       : UUID;
-    name     : String;
-    Category : Integer;
-    Newfield : pricestock;
-
-}
-
-entity Supplier {
-    key Name    : String;
-        Address : String(100);
-        Phone   : String(100);
-        City    : String(100);
+entity Supplier
+{
+    key ID : String;
+    Address : String(100);
+    Phone : String(100);
+    City : String(100);
+    products : Association to many Product on products.supplier = $self;
 }

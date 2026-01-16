@@ -1,5 +1,4 @@
-ID,name,Category,Newfield_price,Newfield_stock,Carrier,Labelflag
-1ae43c71-5356-4d08-ad32-9e4400de99b8,Book,1,100,10,UPS,H
-9a89f63b-a048-49dc-85f9-648af1825041,Bat,2,200,20,Fedex,HQ
-c4918368-7048-4195-bdfb-58767fc919b8,Ball,3,300,30,K&N,LQ
-3b4125b6-2ad4-4009-a2f3-00bc539c5922,Wicket,4,400,40,PURQ,EQ
+ID,name,Category,price,stock,Carrier,Labelflag,supplier_ID
+73494c8e-5bc6-4a2b-ba0a-7eaa248dc3be,Hair Dryer,1,1500,20,Fedex,HQ,1
+2286de48-fef6-4687-a8e3-0765e128f019,Medicine,2,1700,30,UPS,LQ,1
+0c1e3591-9eb7-40de-b029-80fc44bd37dc,Cream,3,2000,40,K&N,EQ,3
