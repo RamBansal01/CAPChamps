@@ -121,6 +121,11 @@ annotate service.Product with @(
             Action : 'productshop.CreatePO',
             Label : '{i18n>CreatePurchaseOrder}',
         },
+        {
+            $Type : 'UI.DataFieldForAnnotation',
+            Target : '@UI.DataPoint#Criticality',
+            Label : '{i18n>5StarRating}',
+        },
     ],
     UI.SelectionFields : [
         Category,
@@ -184,6 +189,16 @@ annotate service.Product with @(
             },
         ],
     },
+    UI.DataPoint #Criticality : {
+        Value : Criticality,
+        Visualization : #Rating,
+        TargetValue : 5,
+    },
+    UI.DataPoint #stock : {
+        Value : stock,
+        Visualization : #Progress,
+        TargetValue : 100,
+    },
 );
 
 annotate service.Product with {
@@ -239,4 +254,20 @@ annotate service.Product.conversation with @(
         },
     ]
 );
+
+annotate service.Supplier with {
+    name @(
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Supplier',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : name,
+                    ValueListProperty : 'name',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true,
+)};
 

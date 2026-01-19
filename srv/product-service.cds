@@ -1,28 +1,45 @@
-using {sap.cap.namespace1 as my} from '../db/schema';
+using { sap.cap.namespace1 as my } from '../db/schema';
 
-//@protocol: 'rest'
-service productshop {
-    entity Product  as projection on my.Product actions{
-    action OrderProduct(
-    name  : String  @title: 'Product name',
-                stock : Integer @title: 'Product Stock'
+service productshop
+{
+    @odata.draft.enabled // to enable create and edit button
+    entity Product as
+        projection on my.Product
+        actions
+        {
+            action OrderProduct
+            (
+                @title : 'Product name'
+                name : String,
+                @title : 'Product Stock'
+                stock : Integer
+            );
 
-    );
+            action addtocart
+            (
+                @title : 'Add to cart'
+                name : String
+            );
 
-     action addtocart(
-    name  : String  @title: 'Add to cart'
-     );
-     
-    action CreatePO(
-    name  : String  @title: 'Create Purchase Order'
-                
-    );
-   
+            action CreatePO
+            (
+                @title : 'Create Purchase Order'
+                name : String
+            );
+        };
 
-    };
+    entity Supplier as
+        projection on my.Supplier;
 
-    entity Supplier as projection on my.Supplier;
+    function MyFunction
+    (
+        name : String
+    )
+    returns String;
 
-    function MyFunction(name: String) returns String;
-    action   MyAction(name: String)   returns String;
+    action MyAction
+    (
+        name : String
+    )
+    returns String;
 }
