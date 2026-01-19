@@ -15,7 +15,8 @@
     "watch-productshop": "cds watch --open productshop/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-supplier": "cds watch --open supplier/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-productlist": "cds watch --open productlist/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-supplierlist": "cds watch --open supplierlist/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-supplierlist": "cds watch --open supplierlist/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "workspaces": [
@@ -25,6 +26,7 @@
     "app/productshop",
     "app/supplier",
     "app/productlist",
-    "app/supplierlist"
+    "app/supplierlist",
+    "app/project1"
   ]
 }

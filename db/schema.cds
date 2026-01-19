@@ -19,6 +19,7 @@ entity Product : cuid, managed, routeinfo
     Category : Integer;
     price : Integer;
     stock : Integer;
+    Criticality : Integer;
     supplier : Association to one Supplier;
     conversation: Composition of many{
         key ID: UUID;
@@ -32,6 +33,7 @@ entity Supplier
 {
     key ID : String;
     Address : String(100);
+    name : String(100);
     Phone : String(100);
     City : String(100);
     products : Association to many Product on products.supplier = $self;

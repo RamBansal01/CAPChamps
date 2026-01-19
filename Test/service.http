@@ -1,5 +1,6 @@
 @baseurl = http://localhost:4004/odata/v4/productshop
 
+#@baseurl = http://localhost:4004/rest/productshop
 
 
 #GET {{baseurl}}/addition(num1=5,num2=10)
@@ -32,4 +33,14 @@
 
 #GET  {{baseurl}}/Supplier?$expand=products
 
-GET {{baseurl}}/Product?$expand=conversation
+#GET {{baseurl}}/Product?$expand=conversation
+
+#GET {{baseurl}}/MyFunction(name='Audi')
+
+# Functions are called by GET call, actions are called by POST call 
+POST {{baseurl}}/MyAction
+Content-Type: application/json
+
+{
+  "name": "Philips"
+}
