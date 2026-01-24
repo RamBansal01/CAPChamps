@@ -2,15 +2,13 @@ using { sap.cap.namespace1 as my } from '../db/schema';
 
 service productshop
 {
-    @odata.draft.enabled // to enable create and edit button
+    //@odata.draft.enabled // to enable create and edit button
     entity Product as
         projection on my.Product
         actions
         {
             action OrderProduct
             (
-                @title : 'Product name'
-                name : String,
                 @title : 'Product Stock'
                 stock : Integer
             );
@@ -43,3 +41,6 @@ service productshop
     )
     returns String;
 }
+
+//annotate productshop with @(requires: 'productmanager');  //role based; site accessed by product manger only, will ask for User ID and Password
+

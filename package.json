@@ -2,7 +2,9 @@
   "name": "productshop",
   "version": "1.0.0",
   "description": "A simple CAP project.",
+  "private": true,
   "dependencies": {
+    "@cap-js/hana": "^2",
     "@sap/cds": "^9",
     "express": "^4"
   },
@@ -18,7 +20,6 @@
     "watch-supplierlist": "cds watch --open supplierlist/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
-  "private": true,
   "workspaces": [
     "app/*"
   ],
@@ -28,5 +29,34 @@
     "app/productlist",
     "app/supplierlist",
     "app/project1"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "User1": {
+              "password": "password",
+              "roles": [
+                "productmanager"
+              ]
+            },
+            "User2": {
+              "password": "Initial",
+              "roles": [
+                "productmanager"
+              ]
+            }
+          }
+        }
+      },
+      "db": {
+        "kind": "sqlite",
+        "crendential": {
+          "database": "db.sqlite"
+        }
+      }
+    }
+  }
 }

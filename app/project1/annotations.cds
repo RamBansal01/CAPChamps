@@ -82,12 +82,6 @@ annotate service.Product with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : stock,
-            Label : '{i18n>ProductStock}',
-            @UI.Importance : #Medium,
-        },
-        {
-            $Type : 'UI.DataField',
             Value : Labelflag,
             Label : '{i18n>SecurityLabels}',
             Criticality : Criticality,
@@ -125,6 +119,11 @@ annotate service.Product with @(
             $Type : 'UI.DataFieldForAnnotation',
             Target : '@UI.DataPoint#Criticality',
             Label : '{i18n>5StarRating}',
+        },
+        {
+            $Type : 'UI.DataFieldForAnnotation',
+            Target : '@UI.DataPoint#stock1',
+            Label : '{i18n>ProductStock1}',
         },
     ],
     UI.SelectionFields : [
@@ -198,6 +197,18 @@ annotate service.Product with @(
         Value : stock,
         Visualization : #Progress,
         TargetValue : 100,
+    },
+    UI.DataPoint #stockleft : {
+        Value : stockleft,
+        Visualization : #Progress,
+        TargetValue : 1500,
+        Criticality : Criticality,
+    },
+    UI.DataPoint #stock1 : {
+        Value : stock,
+        Visualization : #Progress,
+        TargetValue : 1500,
+        Criticality : Criticality,
     },
 );
 

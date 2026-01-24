@@ -1,28 +1,53 @@
 const cds = require('@sap/cds');
-
 module.exports = cds.service.impl(async function (srv) {
+  const { Product } = srv.entities;
 
- //  srv.on('READ', 'Product', async (req) => {
-   // console.log('<< I am at ON Handler');
-//});
+  srv.before('OrderProduct', async (req) => {
+    
+    //console.log(req.data);
+    //console.log(req.params);
+    console.log('Request Data:', JSON.stringify(req.data, null, 2));
+    console.log('Request Params:', JSON.stringify(req.params, null, 2));
+    const productId = req.params[0].ID;
+    console.log('ProductId:', productId);
 
-  // srv.before('READ', 'Product', async (req) => {
-    //console.log('<< I am at before Handler');
-//});
+  /* const result = await SELECT.one
+  .from(Product)
+  .columns('stock').where({ ID: req.params[0]});
 
-  // srv.after('READ', 'Product', async (req) => {
-    //console.log('<< I am at after Handler');
-//});
+    console.log('<< select query result', result)
+
+    if (result[0].stock > 500){
+      return req.error({
+        code: '400',
+        message: 'Enough stock available'
+      })
+      
+    }*/
+    
+   /* Show DB content */   
+  const result = await SELECT.from(Product);
+  console.log('Product result:', result);
 
 
-    srv.on('MyFunction', async (req) => {
-        let result = `Super Cool ${req.data.name}`;
-        return result;
-    });
+   const stockObj = await SELECT.one
+   .from(Product)
+   .columns('stock').where({ ID: productId });
 
-    srv.on('MyAction', async (req) => {
-        let result = `Super Cool ${req.data.name}`;
-        return result;
-    });
+  console.log('Stock for selected product :', stockObj);
+  //console.log('Result :', stockObj[0].stock);
 
+  const stock = Number(stockObj?.stock);
+
+
+console.log('Stock (int):', stock);
+
+if (stock >= 500) { return req.error(400, 'Enough stock available'); }
+
+})
+  
+
+srv.on('OrderProduct', async (req) => {
+
+ })
 });
