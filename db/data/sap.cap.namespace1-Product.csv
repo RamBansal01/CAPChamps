@@ -1,4 +1,4 @@
 ID,name,Category,price,stock,Carrier,Labelflag,Criticality,supplier_ID
-73494c8e-5bc6-4a2b-ba0a-7eaa248dc3be,Hair Dryer,1,1500,500,Fedex,HQ,1,1
+73494c8e-5bc6-4a2b-ba0a-7eaa248dc3be,Hair Dryer,1,1500,300,Fedex,HQ,1,1
 2286de48-fef6-4687-a8e3-0765e128f019,Medicine,2,1700,550,UPS,LQ,2,2
 0c1e3591-9eb7-40de-b029-80fc44bd37dc,Cream,3,2000,450,K&N,EQ,3,3

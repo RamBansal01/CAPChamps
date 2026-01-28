@@ -9,9 +9,10 @@ service productshop
         {
             action OrderProduct
             (
-                @title : 'Product Stock'
-                stock : Integer
+                @title : 'Order Quantity'
+                quantity : Integer
             );
+
 
             action addtocart
             (

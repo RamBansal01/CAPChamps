@@ -1,0 +1,4 @@
+ID,createdAt,createdBy,modifiedAt,modifiedBy,Carrier,Labelflag,name,Category,price,stock,quantity,Criticality,supplier_ID
+73494c8e-5bc6-4a2b-ba0a-7eaa248dc3be,2026-01-28T07:58:29.554Z,anonymous,2026-01-28T08:12:35.322Z,anonymous,Fedex,HQ,Hair Dryer,1,1500,350,NULL,1,1
+2286de48-fef6-4687-a8e3-0765e128f019,2026-01-28T07:58:29.554Z,anonymous,2026-01-28T08:14:35.630Z,anonymous,UPS,LQ,Medicine,2,1700,600,NULL,2,2
+0c1e3591-9eb7-40de-b029-80fc44bd37dc,2026-01-28T07:58:29.554Z,anonymous,2026-01-28T08:16:13.755Z,anonymous,K&N,EQ,Cream,3,2000,480,NULL,3,3

@@ -19,6 +19,7 @@ entity Product : cuid, managed, routeinfo
     Category : Integer;
     price : Integer;
     stock : Integer;
+    quantity : Integer;
     Criticality : Integer;
     supplier : Association to one Supplier;
     conversation: Composition of many{
