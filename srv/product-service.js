@@ -63,6 +63,11 @@ module.exports = cds.service.impl(async function (srv) {
     if (rows === 0) {
       req.error(500, 'Stock update failed');
     }
+    
+    req.notify({
+      code: 'STOCK_UPDATED',
+      message: `Order placed successfully. Updated stock is ${updatedStock}`
+    });
 
     return {
       productId,
@@ -70,5 +75,7 @@ module.exports = cds.service.impl(async function (srv) {
       addedQuantity: addQty,
       totalStock: updatedStock
     };
+    
   });
+  
 });
